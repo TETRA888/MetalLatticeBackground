@@ -4,6 +4,7 @@ import bpy
 # math for sine functions
 import math
 
+grid_size = 20
 
 # Adding the sphere
 def create_sphere(current_location):
@@ -11,9 +12,7 @@ def create_sphere(current_location):
     bpy.ops.object.shade_smooth()
 
 # Positioning the sphere in the correct location
-for x in range(0,10):
-    for y in range(0,10):
-        create_sphere(current_location = (x*2,y*2, math.sin(x)))
+for x in range(0,grid_size):
+    for y in range(0,grid_size):
+        create_sphere(current_location = (x*2,y*2, math.sin(y) + math.cos(x))
     
-
-
